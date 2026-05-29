@@ -1,4 +1,5 @@
 import joblib
+from src.utils.logger import logger
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
@@ -31,14 +32,14 @@ def train_model():
 
     accuracy = accuracy_score(y_test, predictions)
 
-    print(f"Model Accuracy: {accuracy:.4f}")
+    logger.info(f"Model Accuracy: {accuracy:.4f}")
 
     joblib.dump(
         model,
         "artifacts/readmission_model.pkl"
     )
 
-    print("Model saved successfully")
+    logger.info("Model saved successfully")
 
 
 if __name__ == "__main__":
