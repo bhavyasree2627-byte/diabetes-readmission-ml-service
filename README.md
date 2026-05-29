@@ -126,3 +126,10 @@ Prediction requests and prediction results are logged using Python logging.
 - Joblib was used for model serialization.
 - Docker was used for containerized deployment.
 - Pytest was used for automated testing.
+
+Train model using:
+
+PYTHONPATH=. python src/models/train.py
+
+This will generate:
+artifacts/readmission_model.pkl
