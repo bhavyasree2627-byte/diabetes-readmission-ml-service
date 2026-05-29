@@ -1,0 +1,7 @@
+{
+  "model_version": "v1",
+  "algorithm": "RandomForestClassifier",
+  "accuracy": 0.8694,
+  "dataset": "Diabetes 130-US Hospitals",
+  "training_date": "2026-05-29"
+}

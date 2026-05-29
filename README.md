@@ -104,3 +104,25 @@ Prediction requests and prediction results are logged using Python logging.
 * Docker deployment
 * CI/CD automation
 * Drift monitoring
+
+## Assumptions
+
+- Readmitted within 30 days is treated as the positive class.
+- Seven numerical features were selected for baseline modeling.
+- Random Forest was chosen as the baseline model.
+- Missing values were handled during preprocessing.
+
+## Limitations
+
+- Only a subset of available dataset features was used.
+- No hyperparameter tuning was performed.
+- Model performance may vary on unseen data.
+- No model drift monitoring is implemented.
+
+## Design Decisions
+
+- FastAPI was selected to expose REST endpoints.
+- Random Forest was selected because it provides strong baseline performance.
+- Joblib was used for model serialization.
+- Docker was used for containerized deployment.
+- Pytest was used for automated testing.
