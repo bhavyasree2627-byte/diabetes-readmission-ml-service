@@ -2,19 +2,8 @@ import pandas as pd
 
 
 def prepare_features(df):
-    """
-    Basic feature engineering
-    """
 
-    df = df.copy()
-
-    # Create target variable
-    df["readmitted_binary"] = df["readmitted"].apply(
-        lambda x: 1 if x == "<30" else 0
-    )
-
-    # Select simple features
-    features = [
+    selected_columns = [
         "time_in_hospital",
         "num_lab_procedures",
         "num_procedures",
@@ -24,8 +13,10 @@ def prepare_features(df):
         "number_inpatient"
     ]
 
-    X = df[features]
+    X = df[selected_columns]
 
-    y = df["readmitted_binary"]
+    y = df["readmitted"].apply(
+        lambda x: 1 if x == "<30" else 0
+    )
 
     return X, y
